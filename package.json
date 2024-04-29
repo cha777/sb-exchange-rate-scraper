@@ -1,0 +1,45 @@
+{
+  "name": "sb-exchange-rate-scraper",
+  "version": "1.0.0",
+  "description": "Exchange rates scraper from Sampath Bank Website",
+  "type": "module",
+  "engines": {
+    "node": ">= 20.9 < 21"
+  },
+  "keywords": [],
+  "main": "src/index.ts",
+  "author": "cha777 <chathuranga_wm@yahoo.com>",
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "dev:debug": "nodemon --inspect src/index.ts",
+    "start": "node build/src/index.js",
+    "clean": "rimraf build dist",
+    "prebuild": "npm run lint",
+    "build": "tsc -p tsconfig.json",
+    "build:watch": "tsc -w -p tsconfig.json",
+    "build:release": "npm run clean && tsc -p tsconfig.release.json",
+    "lint": "eslint . --ext .ts --ext .mts",
+    "prettier": "prettier --config .prettierrc --write ."
+  },
+  "devDependencies": {
+    "@types/fs-extra": "~11.0",
+    "@types/node": "~20",
+    "@typescript-eslint/eslint-plugin": "~7.6",
+    "@typescript-eslint/parser": "~7.6",
+    "eslint": "~8.56",
+    "eslint-config-prettier": "~9.1",
+    "nodemon": "~3.1",
+    "prettier": "~3.2",
+    "rimraf": "~5.0",
+    "ts-node": "~10.9",
+    "typescript": "~5.4"
+  },
+  "dependencies": {
+    "fs-extra": "~11.2",
+    "puppeteer": "^22.7.1",
+    "tslib": "~2.6",
+    "winston": "~3.13"
+  }
+}
